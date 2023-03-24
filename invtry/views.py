@@ -9,9 +9,9 @@ from rest_framework import status
 from rest_framework import viewsets
 
 # Create your views here.
-class ItemViewSet(viewsets.ViewSet):
+class ItemViewSet(viewsets.ModelViewSet):
     queryset = Item.objects.all().order_by('-id')
-    serializer = ItemSerializer(queryset, many=True)
+    serializer_class = ItemSerializer
 
     
     # def list(self, request):
