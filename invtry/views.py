@@ -10,14 +10,5 @@ from rest_framework import viewsets
 
 # Create your views here.
 class ItemViewSet(viewsets.ModelViewSet):
-    queryset = Item.objects.all().order_by('-id')
+    queryset = Item.objects.all()
     serializer_class = ItemSerializer
-
-    
-    # def list(self, request):
-    #     queryset = Item.objects.all().order_by('-id')
-    #     serializer = ItemSerializer(queryset, many=True)
-    #     return Response(serializer.data)
-    
-    # def retrieve(self, request, pk=None):
-    #     queryset = Item.objects.all()

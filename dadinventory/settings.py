@@ -25,9 +25,12 @@ SECRET_KEY = 'django-insecure-$)#)2$ww4bjq6q=+jqm@e8ui5xoebr@)))#prbv&17wah-vl0b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+CORS_ORIGIN_ALLOW_ALL=True
 
-
+CORS_ORIGIN_WHITELIST = [
+     'http://localhost:3000'
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'invtry',
-    'rest_framework'
+    'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'dadinventory.urls'
